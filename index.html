@@ -1,3 +1,508 @@
+
+/
+Claude finished the response
+
+kanaan-full-summary.md
+109 lines
+
+md
+
+Jun 21
+
+Absorbed project context, awaited clarification on next steps
+Absorbed project context, awaited clarification on next steps
+تمام، استوعبت سياق كنعان (منفصل تماماً عن Eleven ERP). الوضع الحالي:
+
+التطبيق جاهز تقنياً ومرفوع موقّعاً على Internal testing (AAB v1.0)
+App content وStore listing (عربي) مكتملان ✅
+المتبقّي للنشر العام:
+
+Closed testing — 12 مختبِراً نشطاً × 14 يوماً (بانتظار إيميلات الـ20 مزارع)
+Create release في مسار Closed testing — رفع نفس الـAAB وإكمال المسار
+بعد 14 يوماً → Apply for production
+شو بدك نشتغل عليه بهالجلسة؟
+
+1782056455295_image.png
+Jun 21
+
+I cannot provide a summary because the user prompt is empty. Please provide the actual user prompt so I can identify its language and create an appropriate summary
+I cannot provide a summary because the user prompt is empty. Please provide the actual user prompt so I can identify its language and create an appropriate summary
+تنبيه مهم: رفع الـCSV يستبدل القائمة كاملة، ما بيضيف عليها — لاحظ "this will replace 1 email in the list". يعني الإيميل الموجود حالياً رح ينمسح.
+
+لذلك:
+
+حطّ كل الإيميلات (الـ12+ مزارع) بملف CSV واحد، مع الإيميل الحالي إذا بدك تبقّيه.
+الصيغة: إيميل واحد بكل سطر، بدون عنوان (header)، عمود واحد.
+مثال محتوى الملف:
+
+farmer1@gmail.com
+farmer2@gmail.com
+tester@gmail.com
+بعد الرفع بيصير زر "Add email addresses" فعّال → اضغطه → بعدها "Save changes" تحت.
+
+تذكير: لازم 12 مختبِراً نشطاً (نزّلوا التطبيق فعلياً وفتحوه) × 14 يوماً متواصلة قبل ما تقدر تعمل Apply for production.
+
+
+excerpt_from_previous_claude_message.txt
+1 line
+
+txt
+
+جاهز
+
+2:12 PM
+
+تحقق من المتطلبات وأبرز النقاط العملية الحاسمة
+تحقق من المتطلبات وأبرز النقاط العملية الحاسمة
+تأكيد: المعلومة صحيحة — الشرط الرسمي من Google Play لحسابات الأفراد المُنشأة بعد 13 نوفمبر 2023 هو 12 مختبِراً على الأقل منضمّين (opted-in) لآخر 14 يوماً متواصلة قبل التقديم لإنتاج. 
+PrimeTestLab
+
+لكن في 3 فروقات عملية مهمة:
+
+"منضمّ" (opted-in) ≠ مضاف للقائمة. المختبِر لازم يفتح رابط الاختبار ويضغط Opt-in فعلياً، مش بس إيميله بالقائمة. 12 مختبِر يعني 12 حساب Google فريد انضمّ فعلاً عبر الرابط الرسمي — مجرد إرسال الدعوات مش كافي. 
+Testers Community
+التفاعل بيتحاسب، مش بس العدد. إذا المختبِرون نزّلوا التطبيق بس ما فتحوه، Google بتعتبره اختبار غير نشط وبترفض الإنتاج حتى لو الأرقام مظبوطة. فعلياً لازمهم يفتحوا التطبيق ويستخدموه خلال الـ14 يوم. 
+12 App Testers
+خُذ هامش أمان. يُنصح بـ15–25 مختبِراً بدل 12 بالضبط، عشان تحمي نفسك من الانسحابات (opt-outs) — لأنه إذا انسحب واحد ونزل العدد تحت 12 بيتأثر تقدّمك. (الـ20 مزارع اللي تواصلت معهم رقم ممتاز.) 
+12 App Testers
+ملاحظة إضافية: إلغاء التثبيت لا يكسر العدّاد — الـ14 يوم بتكمل، بس عملياً اللي بيحذف التطبيق نادراً بيرجع يستخدمه، فبيظهر كـ"غير نشط" وقت التقييم. 
+PrimeTestLab
+
+1782126779896_image.png
+1782126821173_image.png
+2:13 PM
+
+I cannot provide a summary because the user prompt is empty. Please provide the user's actual question or request
+I cannot provide a summary because the user prompt is empty. Please provide the user's actual question or request
+أنت بمسار Closed testing الآن. ناقصك شيئين قبل ما يصير المسار شغّال:
+
+1. قائمة "testers" فيها مختبِر واحد بس (Users = 1).
+لازم ترفع CSV فيه الـ12+ مزارع. اضغط السهم (←) جنب "testers" → Upload CSV. تذكير: الرفع يستبدل القائمة — حُط كل الإيميلات بملف واحد.
+
+2. روابط الانضمام رمادية ("Links will be shown here when you publish your app").
+السبب: ما في release مرفوع بهالمسار بعد. لهيك الـ"Copy link" معطّل.
+
+الترتيب الصحيح:
+
+ارفع الـCSV بكل الإيميلات (القائمة ✓ مختارة أصلاً).
+(اختياري) عبّي Feedback URL or email address — حُط إيميلك novaxmatrix@gmail.com عشان المختبِرين يبعتولك ملاحظات.
+اضغط Save.
+اضغط Create new release → ارفع نفس الـAAB (v1.0) → Review → Roll out.
+بعد ما ينشر، رابط "Join on Android" بيصير فعّال → انسخه وابعته للمزارعين.
+مهم: المزارع لازم يفتح الرابط ويضغط الزر الأخضر للانضمام (opt-in) — مجرد وجود إيميله بالقائمة ما بيكفي. من لحظة انضمام 12 مختبِر، بيبدأ عدّاد الـ14 يوم.
+
+1782126975293_image.png
+12
+
+2:16 PM
+
+Identified missing action: pressing Enter to commit emails
+Identified missing action: pressing Enter to commit emails
+الإيميلات اللي كتبتها لسا ما انضافت — هي بس بحقل الإدخال. لاحظ "Email addresses added" تحت لسا فيها إيميل واحد (aliboss11890@gmail.com).
+
+الخطوات:
+
+اضغط Enter وأنت بحقل "Add email addresses" → رح تنزل الإيميلات لقائمة "Email addresses added".
+(هاد الحقل يضيف للقائمة، ما يستبدل — aliboss11890 رح يضل موجود معهم.)
+تأكّد إنه العدد النهائي بقائمة "Email addresses added" ≥ 12 (ويفضّل أكثر للهامش — كان معك 20 مزارع).
+اضغط Save (الزر تحت يمين).
+ملاحظة: إذا بدك تشيل aliboss11890 احذفه بأيقونة سلة المهملات جنبه. بس إذا هو حسابك للاختبار خلّيه — بيتحسب كمختبِر عادي.
+
+1782127049354_image.png
+2:17 PM
+ممتاز — أول مرحلتين ✅:
+
+✅ Select country
+✅ Select testers
+باقي مرحلة CREATE AND ROLL OUT A RELEASE (الـ3 خطوات مقفولة 🔒 لأنه ما في release بعد):
+
+اضغط Create a new release ›
+ارفع نفس الـAAB (v1.0، ≈11.6MB) — نفس الملف اللي على Internal testing
+عبّي Release name + Release notes (بالعربي مثلاً: "النسخة الأولى للاختبار المغلق")
+Preview and confirm
+Send to Google for review → Roll out
+بعد المراجعة (عادةً ساعات لـInternaI/Closed)، رابط "Join on Android" بيصير فعّال → ابعته للمزارعين.
+
+ابدأ بـCreate a new release وارجعلي بالscreenshot.
+
+1782127081843_image.png
+2:18 PM
+الروابط لسا رمادية لأنه ما رفعت release بعد ("Links will be shown here when you publish your app").
+
+هاد آخر القسم — أنت نزّلت لتحت بالصفحة. لازم ترجع لفوق وتضغط Create new release (الزر الأزرق فوق يمين، أو من تبويب Releases).
+
+الترتيب:
+
+روح لتبويب Releases (فوق)
+اضغط Create new release
+ارفع الـAAB → Release notes → Save
+Review release → Start rollout to Closed testing
+لما ينشر الـrelease، هالروابط (Join on Android / web) بتصير زرقاء وفعّالة تلقائياً.
+
+ارجع لتبويب Releases وابدأ.
+
+1782127111364_image.png
+2:18 PM
+تمام، أنت جوّا صفحة Create release. App integrity سليم ✅.
+
+الأسرع: اضغط "Add from library" — رح يطلعلك الـAAB (v1.0) اللي رفعته على Internal testing، اختاره بدل ما ترفع من جديد. (نفس الملف بالضبط، بيضمن نفس versionCode.)
+
+بعدها:
+
+Release name: اكتب اسم تعريفي (مش بيظهر للمستخدم) — مثلاً 1.0 (1) أو closed-test-v1
+Release notes: اضغط "Copy from a previous release" لو بدك تنسخهم من Internal، أو اكتب بالعربي بين تاغات اللغة، مثلاً:
+   <ar-XA>
+   النسخة الأولى للاختبار المغلق.
+   </ar-XA>
+اضغط Next
+ارجعلي بعد ما توصل لشاشة المراجعة (Review and rollout).
+
+1782127163708_image.png
+2:19 PM
+السبب: ما عرّفت العربي (ar-XA) كلغة مدعومة بالـStore listing لهالتطبيق، فمرفوض بالـrelease notes.
+
+الحل الأسرع: احذف تاغات اللغة واكتب الملاحظات نص عادي بدون أي تاغ:
+
+النسخة الأولى للاختبار المغلق.
+(لما يكون في لغة وحدة بس، مش لازم تاغات إطلاقاً.)
+
+إذا ضل يطالب بتاغ، استعمل اللغة الافتراضية المسجّلة عندك. حسب الإعدادات، لغتك الافتراضية عربي — جرّب:
+
+<ar>
+النسخة الأولى للاختبار المغلق.
+</ar>
+جرّب الأول بدون تاغات. امسح كل النص الموجود (شامل <ar-XA>) واكتب السطر العادي → Next.
+
+1782127235727_image.png
+2:20 PM
+الخطأين مرتبطين ببعض: ما في AAB مضاف للـrelease.
+
+"This release does not add or remove any app bundles" = صندوق الـApp bundles فاضي.
+
+السبب الأرجح: لما عملت "Add from library" ما اخترت الملف فعلياً، أو انحذف.
+
+الحل:
+
+ارجع لفوق لقسم App bundles
+اضغط Add from library → اختار الـAAB (v1.0) من القائمة → تأكّد إنه ظهر بالصندوق
+أو Upload وارفع ملف الـAAB من جهازك مباشرة
+لما يظهر الـbundle بالصندوق، الخطأين بينحلّوا تلقائياً
+انزل تحت → Next / Review
+تأكّد إنك شايف الـbundle (مع versionCode ورقم) بالصندوق قبل ما تكمّل. ارجعلي بالscreenshot لقسم App bundles بعد الإضافة.
+
+1782127262220_image.png
+2:21 PM
+مؤكّد — صندوق App bundles فاضي. الـrelease name مكتوب (closed-test-v1) بس ما في AAB.
+
+اضغط Add from library هلأ → بتطلع قائمة فيها الـbundle اللي رفعته على Internal testing → اختاره (حط ✓) → Add.
+
+إذا "Add from library" طلع فاضي أو ما لقيت الملف:
+
+اضغط Upload بدلها وارفع ملف الـAAB مباشرةً من جهازك (C:\Users\alibo\... — نفس الـAAB v1.0).
+المهم: لازم يظهر سطر فيه الـbundle (App version + رقم) جوّا الصندوق قبل ما الأخطاء تختفي.
+
+ابدأ بـAdd from library وارجعلي شو طلع.
+
+1782127349255_image.png
+2:22 PM
+هاي شاشة تفاصيل الـbundle (App bundle: 1 (1.0)) — مش شاشة الاختيار. أنت فتحت تفاصيله بالغلط.
+
+هاد الـbundle الصحيح: versionCode 1، versionName 1.0.
+
+سكّر هالنافذة (× فوق يمين) → بترجع لقائمة "Add from library" → حط ✓ جنب هالـbundle (مش تضغط على اسمه، بس الصندوق/checkbox) → اضغط زر Add تحت.
+
+الفرق: الضغط على الاسم بيفتح التفاصيل (هاللي صار)؛ المطلوب تأشير الـcheckbox + Add.
+
+بعد الإضافة الصحيحة، الـbundle بيظهر بصندوق App bundles بصفحة الـrelease، والأخطاء بتختفي.
+
+1782127391479_image.png
+2:23 PM
+ممتاز — صار في Warnings بدل Errors. يعني الـbundle انضاف بنجاح والأخطاء راحت ✅.
+
+هدول تحذيرات اختيارية فقط، مش بيوقفوا النشر:
+
+No deobfuscation file — لو بتستخدم R8/proguard، رفع ملف mapping بيسهّل تحليل الكراشات. اختياري.
+No debug symbols (native code) — نفس الفكرة، بيساعد بتحليل الأعطال.
+تقدر تتجاهلهم بأمان للاختبار المغلق. (لو بدك تحسّن لاحقاً للإنتاج، Android Studio بيولّد الـmapping تلقائياً مع release build، بترفعه من نفس شاشة الـbundle.)
+
+كمّل: انزل تحت → اضغط Next → بتوصل لشاشة المراجعة → Save → بعدها Review release → Start rollout to Closed testing.
+
+كمّل وارجعلي عند شاشة الـrollout النهائية.
+
+1782127433347_image.png
+2:23 PM
+هاد إلزامي قبل المراجعة: إقرار Advertising ID.
+
+غريب شوي لأنه بالملخص مكتوب إنه "Ads declaration" مكتمل ✅ — بس يمكن هاد إقرار مختلف (Advertising ID مرتبط بالـbundle نفسه، أو طلب تأكيد جديد).
+
+اضغط Complete declaration → بيسألك:
+
+هل يستخدم تطبيقك معرّف الإعلانات (Advertising ID)؟
+
+كنعان ما فيه إعلانات (أكّدت هاد بالـAds declaration سابقاً)، و ما بيستخدم مكتبات إعلانية (AdMob مثلاً). فالجواب:
+
+No — "تطبيقي لا يستخدم معرّف الإعلانات".
+
+⚠️ تأكّد: إذا كنت ضايف مكتبة فيها إعلانات/تحليلات بتستعمل Advertising ID (زي Google Analytics for Firebase بإصدارات معيّنة، أو Firebase) — بعضها بيجمع الـAdvertising ID تلقائياً. بس بما إنك على Firebase Spark بدون Analytics فعّال للإعلانات، الجواب No صحيح.
+
+اضغط Complete declaration → اختار No → احفظ → رجاع لشاشة الـrelease.
+
+هل ممكن اجعله يستخدم الاعلانات ؟ ما فهمت ؟
+
+2:24 PM
+
+استوضح الفرق بين إعلان التطبيق والإعلانات الفعلية
+استوضح الفرق بين إعلان التطبيق والإعلانات الفعلية
+لأ، هاد الإقرار مش زر بيشغّل الإعلانات. هو بس سؤال إفصاح: "هل تطبيقك يستخدم معرّف الإعلانات أصلاً؟" — Google عم تسأل، مش عم تعرض عليك تضيف إعلانات.
+
+كنعان حالياً ما فيه أي إعلانات (ولا كود إعلانات) → الجواب الصحيح No → كمّل.
+
+أما سؤالك: هل ممكن تضيف إعلانات لاحقاً؟ نعم ممكن، بس هاد مشروع منفصل مش مجرد ضغطة زر، ويتطلب:
+
+دمج مكتبة AdMob (كود فعلي بالتطبيق)
+Claude's response was interrupted.
+https://novaxmatrix.com/ الويب سايت لازم نعدلها و نضيف  كنعان و بص بترول و شرح عنهن
+
+2:29 PM
+
+جلب محتوى الموقع الحالي لفهم البنية الموجودة
+جلب محتوى الموقع الحالي لفهم البنية الموجودة
+Claude's response was interrupted.
+وكمان بدي الموقع ما يكون نصوصه قابله للنسخ
+
+2:29 PM
+
+تقصّى متطلبات الموقع وحضّر محتوى عربي مخصص
+تقصّى متطلبات الموقع وحضّر محتوى عربي مخصص
+لأعدّل الموقع بدقة وأحافظ على تصميمك الحالي (الألوان والخطوط والـCSS)، ارفعلي ملف index.html (وملف CSS لو منفصل). بدونه رح أضطر أبنيه من جديد بتصميم مختلف عن اللي عندك.
+
+قبل ما نبدأ، نقطتين مهمتين:
+
+1. منع نسخ النصوص: بنفّذها (CSS user-select: none + تعطيل كليك يمين/نسخ)، بس لازم تعرف إنها رادع شكلي فقط — أي حدا بيقدر يتجاوزها بـ"عرض المصدر" أو أدوات المطوّر أو إطفاء JavaScript. كمان بتأثر على قارئات الشاشة وأرشفة Google. لو متفهّم هاد، منعملها عادي.
+
+2. التطبيقين لسا مش منشورين فعلياً على Google Play (كنعان باختبار مغلق، بص بترول قبل-الإطلاق). فرح أكتب الحالة "قيد الإطلاق" وما أحط روابط تحميل من Play Store لحد ما ينزلوا فعلاً — عشان الموقع يضل صادق.
+
+مسودّة الوصفين (راجعهم وعدّل اللي بدك):
+
+بص بترول — متجر تجزئة رقمي متعدّد الأقسام
+تطبيق أندرويد للعملاء + لوحة إدارة ويب + سيرفر، لمتجر بثلاثة أقسام: طباعة ثلاثية الأبعاد، سوبر ماركت، سيارات. تصفّح، سلّة وطلبات، بحث، وإدارة كاملة للطلبات من لوحة واحدة. تجربة عربية كاملة.
+Kotlin · Jetpack Compose · Laravel · PostgreSQL
+
+كنعان — دليل الأرض والماشية
+مرشد زراعي للمزارع الفلسطيني. معرفة زراعية مجانية تشتغل بدون إنترنت (محاصيل، أشجار، ثروة حيوانية)، مع استشارة مهندس مدفوعة، حاسبة فترة أمان للمبيدات (PHI)، وتذكيرات.
+Kotlin · Jetpack Compose · Firebase — قيد الإطلاق
+
+ملاحظة: قسم "أعمالنا" الحالي فيه 3 بطاقات كلها فعلياً بتوصف بص بترول بشكل عام (متجر/تطبيق تسوّق/لوحة عمليات). لما أعدّل، رح أدمجهم بمشروع "بص بترول" واحد وأضيف كنعان مشروع ثاني — بدل التكرار. مناسب؟
+
+ارفع الملف وقلّي رأيك بالوصفين.
+
+
+excerpt_from_previous_claude_message.txt
+1 line
+
+txt
+
+ممتاز
+
+2:31 PM
+تمام. ارفعلي ملف index.html (وملف CSS لو منفصل عنه) عشان أعدّل على نفس تصميمك بالضبط.
+
+بانتظار الملف.
+
+
+<!DOCTYPE html> <html lang="en" dir="ltr"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>NovaX Matrix — ستوديو برمجيات</title> <meta name="description" content="NovaX Matrix — ستوديو تطوير برمجيات من فلسطين. منصات ويب، تطبيقات م
+
+pasted
+
+2:32 PM
+
+Orchestrated HTML file reconstruction with base64 preservation and validation
+Orchestrated HTML file reconstruction with base64 preservation and validation
+قرأت الملف بالكامل. رح أعدّل على نفس تصميمك بالضبط (نفس الألوان، الخط، أنيميشن الـhero، تبديل عربي/إنجليزي):
+
+أدمج بطاقات "أعمالنا" الثلاث في مشروعين فعليين: بص بترول وكنعان (مع وصف ثنائي اللغة + شارة التقنيات + حالة "قيد الإطلاق").
+أمنع نسخ النصوص (user-select + تعطيل كليك يمين/نسخ/سحب).
+بكتب الملف هلأ:
+
+Claude's response was interrupted.
+continue
+
+2:47 PM
+
+Orchestrated comprehensive HTML file reconstruction with surgical modifications
+Orchestrated comprehensive HTML file reconstruction with surgical modifications
+Claude's response was interrupted.
+
+index.html
+html
+
+2:59 PM
+
+The user prompt is empty, so there is no primary language established. However, based on the thinking block being in English, here is the summary: Verifying target strings before executing surgical edits
+The user prompt is empty, so there is no primary language established. However, based on the thinking block being in English, here is the summary: Verifying target strings before executing surgical edits
+الملف وصل على القرص. بنسخه لمكان قابل للتعديل وبعدّل عليه مباشرة.
+
+
+The user prompt is empty, so there is no primary language established. However, based on the thinking block being in English, I'll provide a summary in English: Validating assets and verifying content integrity
+The user prompt is empty, so there is no primary language established. However, based on the thinking block being in English, I'll provide a summary in English: Validating assets and verifying content integrity
+
+Copying the uploaded HTML to the writable outputs dir so I can edit it surgically without touching the base64 logo
+
+Script
+I'm verifying the exact CSS strings I need to target before making the edits, starting with the body styling that sets the background color, text color, font family, and line height.
+
+
+Add user-select:none and touch-callout:none to body to deter copying
+
+index.html
++10
+-8
+Adjusting the grid layout from three columns down to two.
+
+
+Change work grid from 3 columns to 2 (now only 2 real projects)
+
+index.html
++1
+-1
+Adding new style classes...
+
+
+Add styles for work tech-stack chips and the 'coming soon' status badge
+
+index.html
++7
+-3
+I'm replacing the work section cards in the grid, setting up article elements with cover images, numbered glyphs, and bilingual headings in Arabic and English. I need to be careful about the features I mention for the Boss Petrol app — maps were removed from the original description, and delivery tracking changed since the driver system was cancelled. I'm updating the card to reflect what's actually in the current version without those outdated features.
+
+
+Replace the 3 generic work cards with 2 real projects: Boss Petrol and Kanaan, each with bilingual text, tech stack, and status badge
+
+index.html
++28
+-23
+I need to add JavaScript to prevent copying and disable the context menu, inserting this block before the language initialization code.
+
+
+Add JS to block right-click, copy, cut, drag, and text selection (paired with user-select:none)
+
+index.html
++8
+-3
+Now I'm running through validation checks on the edits—making sure the file size increased appropriately, the work section displays correctly, and the base64 image data for the favicon and logo stayed intact without corruption.
+
+Done
+تمت كل التعديلات. بتحقّق من سلامة الملف (الشعار base64، عدد البطاقات، منع النسخ):
+
+
+Ran a command, read a file
+Ran a command, read a file
+جاهز. الملف معدّل بالكامل ونفس التصميم الأصلي (الشعار base64 سليم ✅).
+
+اللي صار:
+
+قسم "أعمالنا" — البطاقات الثلاث القديمة (كانت كلها وصف عام) صارت مشروعين فعليين:
+
+بص بترول — متجر بثلاثة أقسام (طباعة 3D، سوبر ماركت، سيارات) + تطبيق عملاء + لوحة إدارة + سيرفر. تقنيات: Kotlin · Jetpack Compose · Laravel · PostgreSQL
+كنعان — دليل الأرض والماشية — مرشد زراعي أوفلاين + استشارة مهندس + حاسبة PHI + تذكيرات. تقنيات: Kotlin · Jetpack Compose · Firebase
+كل بطاقة فيها وصف عربي/إنجليزي، شارات التقنيات، وشارة خضراء "قيد الإطلاق" (نقطة نابضة). الشبكة صارت عمودين بدل ثلاثة.
+
+ملاحظة: حذفت ذكر "الخرائط" و"التتبّع" من وصف بص بترول لأنهم انشالوا فعلياً من التطبيق — الوصف الجديد دقيق.
+
+منع النسخ: فعّلته (تعطيل التحديد + كليك يمين + نسخ/قص/سحب + long-press على الموبايل). بس تذكير: هاد رادع شكلي فقط — أي حدا تقني بيتجاوزه بـ"عرض المصدر" أو أدوات المطوّر.
+
+ارفعه على الاستضافة (GitHub Pages أو وين ما الموقع مستضاف) مكان الـindex.html القديم.
+
+
+Index
+Code · HTML 
+1782129843450_image.png
+كيف اعدل الملف ؟؟
+
+3:04 PM
+هاد ريبو web على GitHub، فيه index.html الحالي (مستضاف عبر GitHub Pages + CNAME لدومينك). عشان تستبدله بالنسخة المعدّلة:
+
+الطريقة الأسرع (رفع الملف):
+
+احذف القديم: اضغط على index.html → فوق يمين أيقونة سلة المهملات (🗑) → Commit.
+ارجع للريبو → اضغط زر + (جنب Code، فوق) → Upload files.
+اسحب ملف index.html المعدّل (اللي نزّلته) → Commit changes.
+أو طريقة بدون حذف (Edit مباشر — لكن صعبة هون):
+الملف فيه شعار base64 ضخم، فالتعديل اليدوي داخل GitHub غير عملي. استبدال الملف كامل أفضل.
+
+⚠️ مهم — لا تحذف CNAME: هاد الملف بيربط الدومين (novaxmatrix.com) بالموقع. لو حذفته بينكسر الدومين. اشتغل بس على index.html.
+
+بعد الـcommit، GitHub Pages بيعيد النشر خلال 1–2 دقيقة. افتح الموقع واعمل hard-refresh (Ctrl+Shift+R) عشان تشوف التغييرات بدون كاش.
+
+بأي طريقة بدك تمشي — الرفع ولا الحذف-ثم-رفع؟
+
+1782130038813_image.png
+3:07 PM
+هاي صفحة بروفايلك (novaxmatrix-cell)، مش الريبو. عشان تعدّل الموقع لازم تفتح ريبو web.
+
+الخطوات:
+
+اضغط على web (تحت Popular repositories، فوق يسار).
+جوّا الريبو، اضغط على ملف index.html.
+فوق يمين الملف، اضغط أيقونة القلم (✏️ Edit) — أو الأسهل: ارجع للريبو واضغط زر + → Upload files وارفع النسخة المعدّلة فوق القديمة.
+⚠️ ذكّرتك: لا تلمس ملف CNAME — هو اللي بيربط دومينك.
+
+افتح ريبو web وارجعلي بالصورة.
+
+1782130184270_image.png
+3:09 PM
+أنت دخلت وضع Edit للملف القديم. التعديل اليدوي هون صعب (الشعار base64 ضخم). الأسهل: استبدل المحتوى كامل.
+
+الخطوات:
+
+اضغط جوّا منطقة الكود → Ctrl+A (تحديد الكل) → Delete (مسح الكل).
+افتح ملف index.html المعدّل (اللي نزّلته مني) بـ Notepad → Ctrl+A → Ctrl+C.
+ارجع لصفحة GitHub → الصق Ctrl+V بمكان الكود الفاضي.
+اضغط Commit changes… (الزر الأخضر فوق يمين) → Commit.
+⚠️ انتبه: منع النسخ (user-select:none) اللي ضفناه بيشتغل على الموقع المنشور، بس ملف الـHTML نفسه عادي بـ Notepad — رح تقدر تنسخه طبيعي. ما في مشكلة.
+
+بعد الـCommit، انتظر 1–2 دقيقة وافتح الموقع بـ Ctrl+Shift+R.
+
+(لو الصق كامل صعب أو تعلّق الصفحة بسبب حجم الـbase64، بدل هيك: Cancel changes → ارجع للريبو → زر + → Upload files → اسحب الملف فوق القديم → Commit. أنظف وأضمن.)
+
+1782130291201_image.png
+3:11 PM
+ممتاز — أنت لصقت الكود الجديد بنجاح (شايف // init language وsetLang('en') و</body> بالأسفل — هاي نهاية ملفنا المعدّل ✅).
+
+بس رسالة الـcommit غلط — Copilot اقترح "Update print statement from 'Hello' to 'Goodbye'" وهاد مالو علاقة بشغلك.
+
+امسح الرسالة واكتب بدلها:
+
+Add Boss Petrol & Kanaan projects, disable text copy
+تأكّد إنه "Commit directly to the main branch" مختار (وهو مختار أصلاً ✅) → اضغط Commit changes الأخضر.
+
+بعدها انتظر 1–2 دقيقة → افتح الموقع → Ctrl+Shift+R.
+
+1782130358827_image.png
+3:12 PM
+في رسالة "You have unsaved changes on this file that can be restored" — يعني الـcommit لسا ما تم، والتعديلات محفوظة كمسودة بس.
+
+شو صار؟ غالباً ضغطت Cancel أو خرجت من نافذة الـcommit. لازم تكمّل:
+
+اضغط Commit changes… (الزر الأخضر فوق يمين).
+صحّح رسالة الـcommit إذا رجع الاقتراح الغلط:
+   Add Boss Petrol & Kanaan projects, disable text copy
+تأكّد "Commit directly to the main branch" مختار → Commit changes الأخضر داخل النافذة.
+⚠️ لا تضغط Discard — بيمسح تعديلاتك. ولا Restore ضروري لأنه تعديلاتك ظاهرة أصلاً.
+
+بعد ما يتم الـcommit فعلياً، شريط "unsaved changes" بيختفي، وبترجع لصفحة الملف العادية. وقتها بس انتظر دقيقة وافتح الموقع بـ Ctrl+Shift+R.
+
+
+
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -39,11 +544,13 @@
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
+    -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+    -webkit-touch-callout:none;
   }
   a{color:inherit;text-decoration:none}
   ::selection{background:var(--text);color:#070709}
   :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
-
+ 
   .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:22px}
   .display{font-family:'Unbounded','Cairo',sans-serif}
   .grad{background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -53,7 +560,7 @@
     color:var(--muted);
   }
   .eyebrow::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--accent)}
-
+ 
   /* ---------- NAV ---------- */
   header.nav{
     position:sticky;top:0;z-index:50;
@@ -85,7 +592,7 @@
   .hamb{display:none;background:transparent;border:1px solid var(--line);border-radius:11px;width:42px;height:42px;cursor:pointer;color:var(--text)}
   .hamb svg{width:20px;height:20px}
   .mobile-menu{display:none}
-
+ 
   /* ---------- HERO ---------- */
   .hero{position:relative;min-height:calc(100svh - var(--nav-h));display:flex;align-items:center;overflow:hidden}
   #nova{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
@@ -117,19 +624,19 @@
   html[dir="rtl"] .btn .arrow{transform:scaleX(-1)}
   .btn:hover .arrow{transform:translateX(4px)}
   html[dir="rtl"] .btn:hover .arrow{transform:scaleX(-1) translateX(4px)}
-
+ 
   /* ---------- SECTION SHELL ---------- */
   section{scroll-margin-top:calc(var(--nav-h) + 12px)}
   .sec{padding-block:clamp(72px,11vw,128px)}
   .sec-head{max-width:60ch;margin-bottom:54px}
   .sec-head h2{font-weight:800;font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.1;margin-top:16px;letter-spacing:-.01em}
-
+ 
   /* ---------- ABOUT ---------- */
   .about{position:relative;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(20,14,46,.5),transparent 60%)}
   .about p.lead{font-size:clamp(1.05rem,1.8vw,1.3rem);color:#cfcae8;max-width:62ch}
   .tags{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
   .tag{padding:8px 16px;border:1px solid var(--line);border-radius:999px;font-weight:600;font-size:.9rem;color:var(--muted);background:rgba(255,255,255,.02)}
-
+ 
   /* ---------- SERVICES ---------- */
   .grid-svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .card{
@@ -147,7 +654,7 @@
   .ic svg{width:26px;height:26px}
   .card h3{font-size:1.22rem;font-weight:800;margin-bottom:9px}
   .card p{color:var(--muted);font-size:.98rem}
-
+ 
   /* ---------- MARQUEE ---------- */
   .marquee{border-block:1px solid var(--line);padding-block:26px;overflow:hidden;background:rgba(255,255,255,.015)}
   .mq-label{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:20px;font-weight:700}
@@ -157,9 +664,9 @@
   @keyframes scroll-x{to{transform:translateX(calc(-50% - 7px))}}
   html[dir="rtl"] .mq-track{animation-name:scroll-x-rtl}
   @keyframes scroll-x-rtl{to{transform:translateX(calc(50% + 7px))}}
-
+ 
   /* ---------- WORK ---------- */
-  .grid-work{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .grid-work{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   .work-card{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--panel);transition:transform .25s,border-color .25s}
   .work-card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.22)}
   .work-cover{height:172px;position:relative;display:grid;place-items:center}
@@ -170,7 +677,11 @@
   .wc1{background:linear-gradient(135deg,#1c1d22,#0c0d11)}
   .wc2{background:linear-gradient(135deg,#212228,#101116)}
   .wc3{background:linear-gradient(135deg,#191a1f,#0a0b0e)}
-
+  .work-stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .work-stack span{font-size:.74rem;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 11px;background:rgba(255,255,255,.025)}
+  .wbadge{position:absolute;top:14px;inset-inline-end:14px;display:inline-flex;align-items:center;gap:7px;font-size:.72rem;font-weight:700;color:#cfe8d8;background:rgba(60,220,130,.12);border:1px solid rgba(60,220,130,.32);border-radius:999px;padding:5px 11px}
+  .wbadge .dot{width:7px;height:7px;border-radius:50%;background:#3CDC82;box-shadow:0 0 8px #3CDC82}
+ 
   /* ---------- CONTACT ---------- */
   .contact{border-top:1px solid var(--line);background:radial-gradient(80% 120% at 50% 0%, rgba(255,255,255,.05), transparent 60%)}
   .contact .sub{color:var(--muted);font-size:clamp(1rem,1.7vw,1.18rem);max-width:50ch;margin-top:14px}
@@ -180,7 +691,7 @@
   .cc .ic{margin-bottom:16px}
   .cc .lbl{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
   .cc .val{font-weight:700;font-size:1.06rem;margin-top:6px;word-break:break-word}
-
+ 
   /* ---------- FOOTER ---------- */
   footer{border-top:1px solid var(--line);padding-block:44px}
   .foot{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
@@ -188,11 +699,11 @@
   .foot .fnote{color:var(--muted);font-size:.9rem}
   .foot a.top{color:var(--muted);font-weight:700;font-size:.9rem;border:1px solid var(--line);padding:9px 16px;border-radius:999px;transition:.2s}
   .foot a.top:hover{color:var(--text);border-color:rgba(255,255,255,.3)}
-
+ 
   /* ---------- REVEAL ---------- */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
-
+ 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:920px){
     .grid-svc,.grid-work,.contact-grid{grid-template-columns:repeat(2,1fr)}
@@ -224,7 +735,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-inner">
@@ -260,9 +771,9 @@
     <a href="#contact" class="cta-pill" data-ar="ابدأ مشروعك" data-en="Start a project">ابدأ مشروعك</a>
   </div>
 </header>
-
+ 
 <span id="top"></span>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <canvas id="nova" aria-hidden="true"></canvas>
@@ -279,7 +790,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ABOUT -->
 <section class="sec about" id="about">
   <div class="wrap">
@@ -297,7 +808,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- SERVICES -->
 <section class="sec" id="services">
   <div class="wrap">
@@ -339,7 +850,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- TECH MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="mq-label" data-ar="التقنيات اللي منشتغل فيها" data-en="The stack we build with">التقنيات اللي منشتغل فيها</div>
@@ -347,7 +858,7 @@
     <!-- filled by JS (duplicated for seamless loop) -->
   </div>
 </div>
-
+ 
 <!-- WORK -->
 <section class="sec" id="work">
   <div class="wrap">
@@ -357,30 +868,35 @@
     </div>
     <div class="grid-work">
       <article class="work-card reveal">
-        <div class="work-cover wc1"><span class="glyph">01</span></div>
+        <div class="work-cover wc1">
+          <span class="glyph">01</span>
+          <span class="wbadge"><span class="dot"></span><span data-ar="قيد الإطلاق" data-en="Coming soon">قيد الإطلاق</span></span>
+        </div>
         <div class="work-body">
-          <h3 data-ar="منصّة تجارة تجزئة متعددة الأقسام" data-en="Multi-section retail platform">منصّة تجارة تجزئة متعددة الأقسام</h3>
-          <p data-ar="متجر رقمي + لوحة إدارة + خصم مخزون فوري عبر API." data-en="Digital storefront, admin panel, and live inventory sync over an API.">متجر رقمي + لوحة إدارة + خصم مخزون فوري عبر API.</p>
+          <h3 data-ar="بص بترول" data-en="Boss Petrol">بص بترول</h3>
+          <p data-ar="متجر تجزئة رقمي بثلاثة أقسام (طباعة ثلاثية الأبعاد، سوبر ماركت، سيارات): تطبيق أندرويد للعملاء، لوحة إدارة ويب، وسيرفر — تصفّح وسلّة وطلبات وبحث، وإدارة كاملة للطلبات." data-en="A three-section retail store (3D printing, supermarket, automotive): a customer Android app, a web admin panel, and a backend — browsing, cart, orders, search, and full order management.">متجر تجزئة رقمي بثلاثة أقسام (طباعة ثلاثية الأبعاد، سوبر ماركت، سيارات): تطبيق أندرويد للعملاء، لوحة إدارة ويب، وسيرفر — تصفّح وسلّة وطلبات وبحث، وإدارة كاملة للطلبات.</p>
+          <div class="work-stack">
+            <span>Kotlin</span><span>Jetpack Compose</span><span>Laravel</span><span>PostgreSQL</span>
+          </div>
         </div>
       </article>
       <article class="work-card reveal">
-        <div class="work-cover wc2"><span class="glyph">02</span></div>
-        <div class="work-body">
-          <h3 data-ar="تطبيق تسوّق أندرويد أصلي" data-en="Native Android shopping app">تطبيق تسوّق أندرويد أصلي</h3>
-          <p data-ar="سلّة وطلبات وتتبّع وخرائط، بتجربة عربية كاملة." data-en="Cart, orders, tracking, and maps with a full Arabic experience.">سلّة وطلبات وتتبّع وخرائط، بتجربة عربية كاملة.</p>
+        <div class="work-cover wc2">
+          <span class="glyph">02</span>
+          <span class="wbadge"><span class="dot"></span><span data-ar="قيد الإطلاق" data-en="Coming soon">قيد الإطلاق</span></span>
         </div>
-      </article>
-      <article class="work-card reveal">
-        <div class="work-cover wc3"><span class="glyph">03</span></div>
         <div class="work-body">
-          <h3 data-ar="لوحة عمليات للموظفين" data-en="Staff operations dashboard">لوحة عمليات للموظفين</h3>
-          <p data-ar="إدارة الطلبات والتوصيل والعملاء في واجهة واحدة." data-en="Orders, delivery, and customers managed in a single interface.">إدارة الطلبات والتوصيل والعملاء في واجهة واحدة.</p>
+          <h3 data-ar="كنعان — دليل الأرض والماشية" data-en="Kanaan — Land &amp; livestock guide">كنعان — دليل الأرض والماشية</h3>
+          <p data-ar="مرشد زراعي للمزارع الفلسطيني. معرفة تشتغل بدون إنترنت (محاصيل، أشجار، ثروة حيوانية)، مع استشارة مهندس، وحاسبة فترة أمان للمبيدات، وتذكيرات." data-en="An agricultural guide for Palestinian farmers. Offline knowledge (crops, trees, livestock), plus engineer consultations, a pesticide safety-interval calculator, and reminders.">مرشد زراعي للمزارع الفلسطيني. معرفة تشتغل بدون إنترنت (محاصيل، أشجار، ثروة حيوانية)، مع استشارة مهندس، وحاسبة فترة أمان للمبيدات، وتذكيرات.</p>
+          <div class="work-stack">
+            <span>Kotlin</span><span>Jetpack Compose</span><span>Firebase</span>
+          </div>
         </div>
       </article>
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section class="sec contact" id="contact">
   <div class="wrap">
@@ -409,7 +925,7 @@
     <a href="mailto:novaxmatrix@gmail.com" class="btn btn-primary reveal"><span data-ar="راسلنا الآن" data-en="Email us now">راسلنا الآن</span><span class="arrow">→</span></a>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="wrap foot">
@@ -421,11 +937,11 @@
     <a href="#top" class="top" data-ar="↑ للأعلى" data-en="↑ Back to top">↑ للأعلى</a>
   </div>
 </footer>
-
+ 
 <script>
 (function(){
   "use strict";
-
+ 
   /* ---------- i18n ---------- */
   var nodes = document.querySelectorAll('[data-ar]');
   function setLang(lang){
@@ -446,7 +962,7 @@
   var enBtn = document.getElementById('lang-en');
   arBtn.addEventListener('click', function(){ setLang('ar'); });
   enBtn.addEventListener('click', function(){ setLang('en'); });
-
+ 
   /* ---------- mobile menu ---------- */
   var hamb = document.getElementById('hamb');
   var menu = document.getElementById('mobile-menu');
@@ -457,7 +973,7 @@
   menu.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){ menu.classList.remove('open'); hamb.setAttribute('aria-expanded','false'); });
   });
-
+ 
   /* ---------- tech marquee ---------- */
   var tech = ['Laravel','PHP','Kotlin','Jetpack Compose','React','PostgreSQL','Firebase','Sanctum','REST APIs','Vite','Tailwind','Android'];
   var mq = document.getElementById('mq');
@@ -468,7 +984,7 @@
     s.textContent = t;
     mq.appendChild(s);
   });
-
+ 
   /* ---------- reveal on scroll ---------- */
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduce && 'IntersectionObserver' in window){
@@ -481,7 +997,7 @@
   } else {
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
-
+ 
   /* ---------- NOVA MATRIX — hex grid (signature) ---------- */
   var canvas = document.getElementById('nova');
   var ctx = canvas.getContext('2d');
@@ -541,7 +1057,7 @@
     spawn(x, y, (x/Math.max(1,W)), 1.15);
   }
   hero.addEventListener('pointerdown', burst);
-
+ 
   var last=0, hueCycle=0;
   function draw(staticMode){
     ctx.clearRect(0,0,W,H);
@@ -601,10 +1117,16 @@
     rt=setTimeout(function(){ resize(); if(reduce) draw(true); }, 150);
   });
   start();
-
+ 
+  /* ---------- deter copy / selection ---------- */
+  ['contextmenu','copy','cut','dragstart','selectstart'].forEach(function(ev){
+    document.addEventListener(ev, function(e){ e.preventDefault(); });
+  });
+ 
   // init language
   setLang('en');
 })();
 </script>
 </body>
 </html>
+ 
