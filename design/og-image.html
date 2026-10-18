@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- Source of the 1200×630 link-preview cards. With `python -m http.server 8000` running from the repo root:
+     google-chrome --headless --hide-scrollbars --window-size=1200,630 --screenshot=assets/img/og-en.png "http://localhost:8000/design/og-image.html?en"
+     google-chrome --headless --hide-scrollbars --window-size=1200,630 --screenshot=assets/img/og-ar.png "http://localhost:8000/design/og-image.html?ar" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NovaX Matrix link preview</title>
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+ html,body{width:1200px;height:630px;overflow:hidden}
+ body{background:radial-gradient(60% 80% at 50% 0%,#13213F,#0B1427 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+ img{width:250px;height:227px;margin-bottom:34px}
+ h1{font-size:84px;line-height:1;letter-spacing:-.025em;direction:ltr}
+ h1 span{font-weight:400;color:#AEBBD1}
+ p{font-size:34px;color:#AEBBD1;margin-top:22px}
+ i{position:absolute;inset:auto 0 0;height:6px;background:linear-gradient(90deg,#2050C0,#18AEE8)}
+</style>
+</head>
+<body>
+<img src="/assets/img/logo-256.webp" alt="">
+<h1>NovaX <span>Matrix</span></h1>
+<p id="line">Reliable software, made with care.</p>
+<i></i>
+<script>
+ if (location.search === '?ar') {
+  document.documentElement.lang = 'ar';
+  document.documentElement.dir = 'rtl';
+  document.getElementById('line').textContent = 'برمجيات موثوقة، مصنوعة بعناية.';
+ }
+</script>
+</body>
+</html>
