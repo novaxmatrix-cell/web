@@ -137,6 +137,12 @@ a.bcard:hover .go svg.i{transform:translateX(3px)}
 .iris h3{font-size:var(--fs-lg);line-height:1.4;direction:ltr;text-align:start}
 [dir="rtl"] .iris h3{text-align:right}
 .iris p{color:var(--m);font-size:var(--fs-sm)}
+.iris .pc{margin-top:6px;font-size:var(--fs-xs)}
+/* a product that is coming: same card, quiet like .bcard.soon */
+.iris.soon{background:var(--s2);box-shadow:none;border-style:dashed;margin-top:16px}
+.iris.soon .badge{margin-bottom:8px}
+.iris.soon .txt{flex-basis:420px}
+[dir="rtl"] .iris.soon h3{direction:rtl}
 
 /* Footer */
 footer{background:var(--foot-bg);color:var(--foot-t);padding:48px 0 0;font-size:var(--fs-sm)}

@@ -28,4 +28,4 @@ The previous bilingual studio site (neon dark design, hero canvas, PWA) is prese
 
 - Keep the pages light and dependency-free, with LF line endings. Lighthouse mobile ≥ 95.
 - No invented numbers, clients or testimonials. Brand names always in Latin letters, also in Arabic.
-- Never write an address, city, region or country of the owner. Contact is WhatsApp (wa.me/972568806666) and the site only.
+- Never write an address, city, region or country of the owner. Contact is WhatsApp (wa.me/972568806666) and info@novaxmatrix.com; DataX Matrix / Iris contacts are info@dataxmatrix.com and support@dataxmatrix.com.
