@@ -124,6 +124,11 @@ a.bcard::after{content:"";position:absolute;inset:0 0 auto;height:3px;background
 .bcard .go svg.i{transition:transform .2s}
 a.bcard:hover .go svg.i{transform:translateX(3px)}
 [dir="rtl"] a.bcard:hover .go svg.i{transform:scaleX(-1) translateX(3px)}
+/* a live product card: its own app icon, a kicker naming the brand, a button at the bottom */
+.ic-app{width:56px;height:56px;border-radius:var(--r-lg);box-shadow:var(--sh-sm);margin-bottom:28px}
+.bcard .kicker{margin-bottom:4px}
+[dir="rtl"] .bcard h3.rtl{direction:rtl}
+.bcard .cta{margin-top:auto;padding-top:28px}
 .bcard.soon{background:var(--s2);box-shadow:none;border-style:dashed}
 .bcard.soon .ic{background:var(--s);color:var(--m);border:1px solid var(--b)}
 .badge{margin-top:auto;align-self:flex-start;display:inline-block;background:var(--s);border:1px solid var(--b);color:var(--m);border-radius:var(--r-pill);padding:4px 14px;font-size:var(--fs-xs);font-weight:700}
@@ -173,6 +178,7 @@ footer .brand span{color:var(--foot-t)}
  .brands{grid-template-columns:1fr;gap:16px}
  .bcard{min-height:0;padding:26px 22px}
  .ic{width:48px;height:48px;font-size:22px;margin-bottom:20px}
+ .ic-app{width:48px;height:48px;margin-bottom:20px}
  .iris{padding:22px 20px}
  .iris .cta .btn{flex:1 1 100%}
  .h-head{margin-bottom:28px}
