@@ -10,10 +10,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `assets/css/site.css` — design matches dataxmatrix.com as one family: same tokens, type scale, radius, shadows, light + dark themes (`data-theme` override, saved in `localStorage.theme`). When changing it, bump `?v=` in both pages.
 - `assets/js/site.js` — theme toggle and language-choice saving only.
 - `assets/fonts/` — self-hosted subset IBM Plex Sans Arabic / IBM Plex Sans, copied from `~/projects/dataxmatrix-site` (read that repo, never modify it).
-- `assets/img/` — `logo-*.webp` (NovaX Matrix mark, from the old site), `iris-80.webp` (Iris logo), `burj.svg` (Burj icon, from `~/projects/lab/docs/burj/icon.svg`), `og-en.png` / `og-ar.png` link previews rendered from `design/og-image.html` (commands in its header), `apple-touch-icon.png`.
+- `assets/img/` — `logo-512.png` (JSON-LD `logo`: the new mark, rendered from `favicon.svg` like the touch icon at 512px), `iris-80.webp` (Iris logo), `burj.svg` (Burj icon, from `~/projects/lab/docs/burj/icon.svg`), `og-en.png` / `og-ar.png` link previews rendered from `design/og-image.html` (commands in its header), `apple-touch-icon.png`.
 - `sitemap.xml`, `robots.txt` — update the sitemap if a page is added.
 - `sw.js` — a self-unregistering service worker. The old studio site installed an offline worker; returning visitors' browsers fetch this file, which clears the old caches and unregisters itself. Keep it at `/sw.js` for as long as old visitors might still have the worker installed.
-- `favicon-16.png`, `favicon-32.png` — favicons.
+- `favicon.svg` (copy of `design/marks/novax-favicon.svg`), `favicon-16.png`, `favicon-32.png` — favicons; the PNGs and `assets/img/apple-touch-icon.png` are rendered from `favicon.svg` with Inkscape (`inkscape favicon.svg -w 32 -h 32 -o favicon-32.png`; the touch icon with `--export-background='#0B1020' --export-background-opacity=1`).
+- `404.html` — GitHub Pages serves it for every missing path. One page: an inline script shows Arabic when the path is under `/ar/` or the visitor chose or uses Arabic.
+- `design/marks/` — brand marks (monochrome SVG, `currentColor`; `preview.png` shows them). The pages inline only their shapes as `<symbol>`s (`#m-novax-full` in the hero, `#m-novax` in the header and footer brand, `#m-xmatrix` as the footer signature), so `currentColor` works and the C2PA metadata in the source files is not repeated.
 - `CNAME` — pins the custom domain `novaxmatrix.com`. Do not delete or change it unless the domain is changing.
 - `design/review/` — local screenshots, gitignored.
 

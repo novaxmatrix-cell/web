@@ -68,7 +68,7 @@ bdi{white-space:nowrap}
 header{background:color-mix(in srgb,var(--s) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--b);position:sticky;top:0;z-index:10}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--t);text-decoration:none;direction:ltr;white-space:nowrap}
-.brand img{width:44px;height:40px}
+.brand .nm{width:32px;height:32px;flex:none}
 .brand span{font-weight:400;color:var(--m)}
 .hdr-end{display:flex;align-items:center;gap:8px}
 .icon-btn{background:transparent;border:1px solid var(--b);color:var(--t);border-radius:var(--r);width:42px;height:42px;font-size:18px;cursor:pointer;line-height:1;display:inline-flex;align-items:center;justify-content:center}
@@ -95,8 +95,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .h-hero{position:relative;padding:80px 0 64px;background:linear-gradient(180deg,var(--s) 0%,var(--bg) 100%);overflow:hidden;text-align:center}
 .h-hero::before{content:"";position:absolute;inset:0 0 auto;height:520px;background:radial-gradient(48% 60% at 50% 0%,color-mix(in srgb,var(--p) 10%,transparent),transparent 70%);pointer-events:none}
 .h-intro{position:relative;max-width:900px;margin:0 auto}
-.mark{display:inline-flex;align-items:center;justify-content:center;width:152px;height:152px;border-radius:var(--r-xl);background:radial-gradient(70% 70% at 50% 40%,var(--navy2),var(--navy));box-shadow:var(--sh-lg);border:1px solid color-mix(in srgb,var(--p) 16%,transparent);margin-bottom:32px}
-.mark img{width:113px;height:103px}
+.mark{display:inline-block;width:128px;height:128px;color:var(--t);margin-bottom:36px}
 .h-hero h1{font-size:var(--fs-display);line-height:1.08;letter-spacing:-.025em;margin-bottom:18px;direction:ltr}
 .h-hero h1 span{font-weight:400;color:var(--m)}
 .h-hero .lead{font-size:var(--fs-lg);color:var(--m);max-width:34em;margin:0 auto;line-height:1.75;text-wrap:balance}
@@ -159,7 +158,20 @@ footer .brand span{color:var(--foot-t)}
 .fcols ul{list-style:none;display:grid;gap:8px}
 .fcols li{display:flex;align-items:center;gap:8px}
 .fcols li svg.i{color:#6FD6FA;font-size:18px}
-.fbar{border-top:1px solid rgba(255,255,255,.1);padding:18px 0 22px;font-size:var(--fs-xs)}
+.fbar{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid rgba(255,255,255,.1);padding:18px 0 22px;font-size:var(--fs-xs)}
+/* X Matrix signature: quiet, footer-text colour */
+.sig{display:flex;color:var(--foot-t)}
+.sig svg{width:18px;height:18px}
+
+/* 404: the grid with no lit square */
+body:has(> .nf){min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+.nf{flex:1;display:flex;align-items:center;text-align:center;padding:64px 0}
+.nf .wrap{width:100%;display:flex;flex-direction:column;align-items:center;gap:20px}
+.nf .grid{width:96px;height:96px;color:var(--m)}
+.nf h1{font-size:var(--fs-h2);line-height:1.3}
+.nf [lang="ar"]{font-family:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif}
+html[lang="en"] .l:lang(ar),html[lang="ar"] .l:lang(en){display:none}
+.nf + footer{padding-top:0}
 
 /* Entrance: only when motion is welcome */
 @media (prefers-reduced-motion:no-preference){
@@ -173,8 +185,7 @@ footer .brand span{color:var(--foot-t)}
 @media (max-width:720px){
  section{padding:56px 0}
  .h-hero{padding:56px 0 40px}
- .mark{width:120px;height:120px;margin-bottom:26px}
- .mark img{width:88px;height:80px}
+ .mark{width:104px;height:104px;margin-bottom:28px}
  .brands{grid-template-columns:1fr;gap:16px}
  .bcard{min-height:0;padding:26px 22px}
  .ic{width:48px;height:48px;font-size:22px;margin-bottom:20px}
@@ -183,4 +194,4 @@ footer .brand span{color:var(--foot-t)}
  .iris .cta .btn{flex:1 1 100%}
  .h-head{margin-bottom:28px}
 }
-@media (max-width:380px){.brand{font-size:18px;gap:8px}.brand img{width:40px;height:36px}}
+@media (max-width:380px){.brand{font-size:18px;gap:8px}.brand .nm{width:28px;height:28px}}
